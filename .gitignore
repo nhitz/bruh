@@ -1,17 +1,7 @@
 .DS_Store
 
-*.pyc
-__pycache
-
-# Pytest
-**/.pytest_cache/
-
-# Mypy
-.mypy_cache/
-
 # NPM/Node
 /node_modules
-
 
 # PyCharm
 .idea/
@@ -19,21 +9,8 @@ __pycache
 # Python virtual environment
 venv/
 
-# Heroku deployment
-*.log
-*.pot
-__pycache__/
-local_settings.py
-
-# Django testing
-*.db.sqlite3
-
 # Private environment variables
 .env.*
 
-# Coverage Database
-.coverage
-
-# Coverage HTML Reports
-coverage_python/
-coverage_javascript/
+# SQLite database
+/bruh_backend/db.sqlite3
