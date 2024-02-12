@@ -5,7 +5,7 @@
         <h1 class="mb-6 text-2xl">Sign up</h1>
 
         <p class="mb-6 text-gray-500">
-          Don't have an account? <RouterLink to="/login" class="underline">Click here to sign up!</RouterLink>
+          Don't have an account? <RouterLink :to="{'name': 'login'}" class="underline">Click here to sign up!</RouterLink>
         </p>
 
         <!--                <p class="font-bold">-->
