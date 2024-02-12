@@ -114,8 +114,21 @@
     </div>
 
     <div class="main-right col-span-1 space-y-4">
-      <h1>People you may know...</h1>
-      <h1>Trends</h1>
+      <PeopleYouMayKnow></PeopleYouMayKnow>
+      <Trends></Trends>
     </div>
   </div>
 </template>
+
+<script>
+import PeopleYouMayKnow from "@/components/PeopleYouMayKnow.vue";
+import Trends from "@/components/Trends.vue";
+
+export default {
+  name: "SearchView",
+  components: {
+    PeopleYouMayKnow,
+    Trends,
+  },
+};
+</script>
