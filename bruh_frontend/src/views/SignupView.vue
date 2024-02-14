@@ -110,7 +110,6 @@ export default {
             .post('/api/signup/', this.form)
             .then(response => {
               if (response.data.message === 'success') {
-                console.log('success', response)
                 this.toastStore.showToast(5000, 'The user is registered. Please log in', 'bg-emerald-500')
 
                 this.form.email = ''
@@ -118,10 +117,11 @@ export default {
                 this.form.password1 = ''
                 this.form.password2 = ''
               } else {
-                let message = '';
-                message = response.data.message;
-                this.toastStore.showToast(5000, message, 'bg-red-300')
-                console.log('response', response)
+                let message = response.data.message;
+                for (let key in message) {
+                  this.errors.push(message[key][0])
+                }
+                this.toastStore.showToast(5000, 'There were some errors with your submission', 'bg-red-300')
               }
             })
             .catch(error => {
