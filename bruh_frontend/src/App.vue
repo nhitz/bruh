@@ -43,7 +43,7 @@
         <div class="menu-right">
           <template v-if="userStore.user.isAuthenticated">
             <a href="#">
-              <img src="https://i.pravatar.cc/40?img=70" class="rounded-full">
+              <img src="https://i.pravatar.cc/40?img=70" class="rounded-full" alt="avatar">
             </a>
           </template>
 
