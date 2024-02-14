@@ -5,7 +5,8 @@
         <h1 class="mb-6 text-2xl">Sign up</h1>
 
         <p class="mb-6 text-gray-500">
-          Don't have an account? <RouterLink :to="{'name': 'login'}" class="underline">Click here to sign up!</RouterLink>
+          Don't have an account?
+          <RouterLink :to="{'name': 'login'}" class="underline">Click here to sign up!</RouterLink>
         </p>
 
         <!--                <p class="font-bold">-->
@@ -49,3 +50,66 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  setup() {
+    const toastStore = userToastStore();
+
+    return {
+      toastStore
+    }
+  }
+
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: ''
+      },
+      errors: []
+    }
+  }
+
+  methods: {
+    submitForm() {
+      this.errors = [];
+
+      if (this.form.name === '') {
+        this.errors.push('Name is required');
+      }
+
+      if (this.form.email === '') {
+        this.errors.push('Email is required');
+      }
+
+      if (this.form.password === '') {
+        this.errors.push('Password is required');
+      }
+
+      if (this.form.password_confirmation === '') {
+        this.errors.push('Password confirmation is required');
+      }
+
+      if (this.form.password !== this.form.password_confirmation) {
+        this.errors.push('Passwords do not match');
+      }
+
+      if (this.errors.length === 0) {
+        axios.post('/api/signup', this.form)
+            .then(response => {
+              this.toastStore.addToast('Account created successfully', 'success');
+              this.$router.push({name: 'login'});
+            })
+            .catch(error => {
+              this.toastStore.addToast('An error occurred', 'error');
+            }
+      }
+    }
+  }
+}
+</script>
