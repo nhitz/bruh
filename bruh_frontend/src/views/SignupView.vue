@@ -102,12 +102,17 @@ export default {
       if (this.errors.length === 0) {
         axios.post('/api/signup', this.form)
             .then(response => {
-              this.toastStore.addToast('Account created successfully', 'success');
-              this.$router.push({name: 'login'});
+              if (response.data.message === 'success') {
+                this.toastStore.showToast(5000, 'The user is registered. Please log in', 'bg-emerald-500')
+
+                this.form.email = ''
+                this.form.name = ''
+                this.form.password1 = ''
+                this.form.password2 = ''
+              } else {
+                this.toastStore.showToast(5000, 'Something went wrong. Please try again', 'bg-red-300')
+              }
             })
-            .catch(error => {
-              this.toastStore.addToast('An error occurred', 'error');
-            }
       }
     }
   }
