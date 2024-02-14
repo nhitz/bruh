@@ -18,11 +18,7 @@ export const useUserStore = defineStore({
 
     actions: {
         initStore() {
-            console.log('initStore', localStorage.getItem('user.access'))
-
             if (localStorage.getItem('user.access')) {
-                console.log('User has access!')
-
                 this.user.access = localStorage.getItem('user.access')
                 this.user.refresh = localStorage.getItem('user.refresh')
                 this.user.id = localStorage.getItem('user.id')
@@ -32,8 +28,6 @@ export const useUserStore = defineStore({
                 this.user.isAuthenticated = true
 
                 this.refreshToken()
-
-                console.log('Initialized user:', this.user)
             }
         },
 
