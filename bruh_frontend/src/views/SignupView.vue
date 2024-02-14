@@ -90,19 +90,19 @@ export default {
       this.errors = []
 
       if (this.form.email === '') {
-        this.errors.push('Your e-mail is missing.')
+        this.errors.push('Your e-mail is missing')
       }
 
       if (this.form.name === '') {
-        this.errors.push('Your name is missing.')
+        this.errors.push('Your name is missing')
       }
 
       if (this.form.password1 === '') {
-        this.errors.push('Your password is missing.')
+        this.errors.push('Your password is missing')
       }
 
       if (this.form.password1 !== this.form.password2) {
-        this.errors.push('Passwords do not match.')
+        this.errors.push('The password does not match')
       }
 
       if (this.errors.length === 0) {
