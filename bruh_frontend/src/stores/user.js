@@ -17,7 +17,6 @@ export const useUserStore = defineStore({
 
     actions: {
         initStore() {
-            console.log('initStore', localStorage.getItem('user.access'))
 
             if (localStorage.getItem('user.access')) {
                 console.log('User has access!')
