@@ -10,4 +10,4 @@ from .serializers import PostSerializer
 def post_list(request):
     posts = Post.objects.all()
     serializer = PostSerializer(posts, many=True)
-    return JsonResponse({'data': serializer.data})
+    return JsonResponse(serializer.data, safe=False)
