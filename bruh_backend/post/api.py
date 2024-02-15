@@ -29,4 +29,4 @@ def post_create(request):
 
         return JsonResponse(serializer.data, safe=False)
     else:
-        return JsonResponse({'error': 'add somehting here later!...'})
+        return JsonResponse({'error': 'Something went wrong.'})
