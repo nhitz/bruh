@@ -64,8 +64,6 @@ export default {
       axios
           .get('/api/posts/')
           .then(response => {
-            console.log('data', response.data)
-
             this.posts = response.data
           })
           .catch(error => {
@@ -74,15 +72,11 @@ export default {
     },
 
     submitForm() {
-      console.log('submitForm', this.body)
-
       axios
           .post('/api/posts/create/', {
             'body': this.body
           })
           .then(response => {
-            console.log('data', response.data)
-
             this.posts.unshift(response.data)
             this.body = ''
           })
