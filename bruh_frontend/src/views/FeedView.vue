@@ -2,14 +2,14 @@
   <div class="max-w-7xl mx-auto grid grid-cols-4 gap-4">
     <div class="main-center col-span-3 space-y-4">
       <div class="bg-white border border-gray-200 rounded-lg">
-        <form v-on:submit.prevent="submitForm" method="post">
+        <form method="post" v-on:submit.prevent="submitForm">
           <div class="p-4">
             <textarea v-model="body" class="p-4 w-full bg-gray-100 rounded-lg"
                       placeholder="What are you thinking about?"></textarea>
           </div>
 
           <div class="p-4 border-t border-gray-100 flex justify-between">
-            <a href="#" class="inline-block py-4 px-6 bg-gray-600 text-white rounded-lg">Attach image</a>
+            <a class="inline-block py-4 px-6 bg-gray-600 text-white rounded-lg" href="#">Attach image</a>
 
             <button class="inline-block py-4 px-6 bg-purple-600 text-white rounded-lg">Post</button>
           </div>
@@ -17,9 +17,9 @@
       </div>
 
       <div
-          class="p-4 bg-white border border-gray-200 rounded-lg"
           v-for="post in posts"
           v-bind:key="post.id"
+          class="p-4 bg-white border border-gray-200 rounded-lg"
       >
         <FeedItem v-bind:post="post"/>
       </div>

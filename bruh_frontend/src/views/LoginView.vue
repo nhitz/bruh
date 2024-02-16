@@ -22,14 +22,16 @@
         <form class="space-y-6" v-on:submit.prevent="submitForm">
           <div>
             <label>E-mail</label><br>
-            <input type="email" v-model="form.email" placeholder="Your e-mail address"
-                   class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
+            <input v-model="form.email" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg"
+                   placeholder="Your e-mail address"
+                   type="email">
           </div>
 
           <div>
             <label>Password</label><br>
-            <input type="password" v-model="form.password" placeholder="Your password"
-                   class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
+            <input v-model="form.password" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg"
+                   placeholder="Your password"
+                   type="password">
           </div>
 
           <template v-if="errors.length > 0">

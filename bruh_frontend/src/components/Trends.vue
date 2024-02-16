@@ -9,7 +9,7 @@
           <span class="text-gray-500">180 posts</span>
         </p>
 
-        <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg">Explore</a>
+        <a class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg" href="#">Explore</a>
       </div>
 
       <div class="flex items-center justify-between">
@@ -18,7 +18,7 @@
           <span class="text-gray-500">180 posts</span>
         </p>
 
-        <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg">Explore</a>
+        <a class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg" href="#">Explore</a>
       </div>
 
       <div class="flex items-center justify-between">
@@ -27,7 +27,7 @@
           <span class="text-gray-500">180 posts</span>
         </p>
 
-        <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg">Explore</a>
+        <a class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg" href="#">Explore</a>
       </div>
 
       <div class="flex items-center justify-between">
@@ -36,7 +36,7 @@
           <span class="text-gray-500">180 posts</span>
         </p>
 
-        <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg">Explore</a>
+        <a class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg" href="#">Explore</a>
       </div>
     </div>
   </div>
