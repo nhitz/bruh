@@ -12,3 +12,4 @@ force-exclude = '''
      | node_modules
      | .*/migrations/
  )
+'''
