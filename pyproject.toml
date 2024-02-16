@@ -1,0 +1,15 @@
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.py$'
+force-exclude = '''
+ (
+     .idea
+     | .pytest_cache
+     | .mypy_cache
+     | .ruff_cache
+     | venv
+     | node_modules
+     | .*/migrations/
+ )
+'''

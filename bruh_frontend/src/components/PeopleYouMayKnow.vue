@@ -5,32 +5,32 @@
     <div class="space-y-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2">
-          <img src="https://i.pravatar.cc/300?img=70" class="w-[40px] rounded-full">
+          <img class="w-[40px] rounded-full" src="https://i.pravatar.cc/300?img=70">
 
           <p class="text-xs"><strong>Code With Stein</strong></p>
         </div>
 
-        <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg">Show</a>
+        <a class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg" href="#">Show</a>
       </div>
 
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2">
-          <img src="https://i.pravatar.cc/300?img=70" class="w-[40px] rounded-full">
+          <img class="w-[40px] rounded-full" src="https://i.pravatar.cc/300?img=70">
 
           <p class="text-xs"><strong>Code With Stein</strong></p>
         </div>
 
-        <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg">Show</a>
+        <a class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg" href="#">Show</a>
       </div>
 
       <div class="flex items-center justify-between">
         <div class="flex items-center space-x-2">
-          <img src="https://i.pravatar.cc/300?img=70" class="w-[40px] rounded-full">
+          <img class="w-[40px] rounded-full" src="https://i.pravatar.cc/300?img=70">
 
           <p class="text-xs"><strong>Code With Stein</strong></p>
         </div>
 
-        <a href="#" class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg">Show</a>
+        <a class="py-2 px-3 bg-purple-600 text-white text-xs rounded-lg" href="#">Show</a>
       </div>
     </div>
   </div>
