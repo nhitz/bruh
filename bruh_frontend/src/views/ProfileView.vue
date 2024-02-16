@@ -82,7 +82,10 @@ export default {
   },
 
   mounted() {
-    this.getFeed()
+    console.log('this.$route.params.id', this.$route.params.id)
+    if (this.$route.params.id) {
+      this.getFeed()
+    }
   },
 
   watch: {
@@ -97,17 +100,20 @@ export default {
 
   methods: {
     getFeed() {
-      axios
-          .get(`/api/posts/profile/${this.$route.params.id}/`)
-          .then(response => {
-            console.log('data', response.data)
+      const id = this.$route.params.id;
+      if (id) {
+        axios
+            .get(`/api/posts/profile/${id}/`)
+            .then(response => {
+              console.log('data', response.data)
 
-            this.posts = response.data.posts
-            this.user = response.data.user
-          })
-          .catch(error => {
-            console.log('error', error)
-          })
+              this.posts = response.data.posts
+              this.user = response.data.user
+            })
+            .catch(error => {
+              console.log('error', error)
+            })
+      }
     },
 
     submitForm() {
