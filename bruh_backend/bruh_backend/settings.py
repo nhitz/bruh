@@ -48,10 +48,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "account",
+    "post",
+    "search",
     "rest_framework",
     "rest_framework_simplejwt",
     "corsheaders",
-    "post.apps.PostConfig",
 ]
 
 MIDDLEWARE = [
