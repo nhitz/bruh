@@ -90,8 +90,6 @@ export default {
             .then(response => {
               this.userStore.setToken(response.data)
 
-              console.log(response.data.access)
-
               axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.access;
             })
             .catch(error => {
