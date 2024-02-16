@@ -82,7 +82,6 @@ export default {
   },
 
   mounted() {
-    console.log('this.$route.params.id', this.$route.params.id)
     if (this.$route.params.id) {
       this.getFeed()
     }
@@ -105,8 +104,6 @@ export default {
         axios
             .get(`/api/posts/profile/${id}/`)
             .then(response => {
-              console.log('data', response.data)
-
               this.posts = response.data.posts
               this.user = response.data.user
             })
@@ -117,8 +114,6 @@ export default {
     },
 
     submitForm() {
-      console.log('submitForm', this.body)
-
       axios
           .post('/api/posts/create/', {
             'body': this.body
