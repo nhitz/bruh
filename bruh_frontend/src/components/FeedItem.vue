@@ -17,7 +17,7 @@
 
   <div class="my-6 flex justify-between">
     <div class="flex space-x-6">
-      <div class="flex items-center space-x-2">
+      <div class="flex items-center space-x-2" @click="likePost(post.id)">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
              xmlns="http://www.w3.org/2000/svg">
           <path
@@ -26,7 +26,7 @@
               stroke-linejoin="round"></path>
         </svg>
 
-        <span class="text-gray-500 text-xs">82 likes</span>
+        <span class="text-gray-500 text-xs">{{ post.likes_count }} likes</span>
       </div>
 
       <div class="flex items-center space-x-2">
@@ -55,9 +55,26 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   props: {
     post: Object
-  }
+  },
+
+  methods: {
+    likePost(id) {
+      axios
+          .post(`/api/posts/${id}/like/`)
+          .then(response => {
+            if (response.data.message == 'like created') {
+              this.post.likes_count += 1
+            }
+          })
+          .catch(error => {
+            console.log('error', error)
+          })
+    }
+  },
 }
 </script>
