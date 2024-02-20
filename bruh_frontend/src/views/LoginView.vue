@@ -22,16 +22,14 @@
         <form class="space-y-6" v-on:submit.prevent="submitForm">
           <div>
             <label>E-mail</label><br>
-            <input v-model="form.email" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg"
-                   placeholder="Your e-mail address"
-                   type="email">
+            <input type="email" v-model="form.email" placeholder="Your e-mail address"
+                   class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
           </div>
 
           <div>
             <label>Password</label><br>
-            <input v-model="form.password" class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg"
-                   placeholder="Your password"
-                   type="password">
+            <input type="password" v-model="form.password" placeholder="Your password"
+                   class="w-full mt-2 py-4 px-6 border border-gray-200 rounded-lg">
           </div>
 
           <template v-if="errors.length > 0">
@@ -93,7 +91,11 @@ export default {
               axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.access;
             })
             .catch(error => {
-              console.log('error', error)
+              if (error.response && error.response.data.detail) {
+                this.errors.push(error.response.data.detail)
+              } else {
+                console.log('error', error)
+              }
             })
 
         await axios
