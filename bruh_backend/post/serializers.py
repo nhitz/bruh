@@ -1,6 +1,6 @@
-from account.serializers import UserSerializer
 from rest_framework import serializers
 
+from account.serializers import UserSerializer
 from .models import Post
 
 
@@ -12,6 +12,7 @@ class PostSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "body",
+            "likes_count",
             "created_by",
             "created_at_formatted",
         )
