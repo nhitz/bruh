@@ -91,7 +91,11 @@ export default {
               axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.access;
             })
             .catch(error => {
-              console.log('error', error)
+              if (error.response && error.response.data.detail) {
+                this.errors.push(error.response.data.detail)
+              } else {
+                console.log('error', error)
+              }
             })
 
         await axios
