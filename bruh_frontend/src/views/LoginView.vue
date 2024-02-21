@@ -85,10 +85,21 @@ export default {
       if (this.errors.length === 0) {
         await axios
             .post('/api/login/', this.form)
-            .then(response => {
+            .then(async response => {
               this.userStore.setToken(response.data)
 
               axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.access;
+
+              await axios
+                  .get('/api/me/')
+                  .then(response => {
+                    this.userStore.setUserInfo(response.data)
+
+                    this.$router.push('/feed')
+                  })
+                  .catch(error => {
+                    console.log('error', error)
+                  })
             })
             .catch(error => {
               if (error.response?.data.detail) {
@@ -96,17 +107,6 @@ export default {
               } else {
                 console.log('error', error)
               }
-            })
-
-        await axios
-            .get('/api/me/')
-            .then(response => {
-              this.userStore.setUserInfo(response.data)
-
-              this.$router.push('/feed')
-            })
-            .catch(error => {
-              console.log('error', error)
             })
       }
     }
