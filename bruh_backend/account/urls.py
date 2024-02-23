@@ -1,13 +1,8 @@
 from django.urls import path
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.views import TokenRefreshView
 
 from . import api
-from .serializers import CustomTokenObtainPairSerializer
-
-
-class CustomTokenObtainPairView(TokenObtainPairView):
-    serializer_class = CustomTokenObtainPairSerializer
-
+from .views import CustomTokenObtainPairView
 
 urlpatterns = [
     path("me/", api.me, name="me"),
