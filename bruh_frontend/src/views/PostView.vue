@@ -74,7 +74,6 @@ export default {
       axios
           .get(`/api/posts/${this.$route.params.id}/`)
           .then(response => {
-            console.log('data', response.data)
 
             this.post = response.data.post
           })
