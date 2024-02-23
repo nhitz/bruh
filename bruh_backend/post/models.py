@@ -14,7 +14,7 @@ class Like(models.Model):
 
 class Comment(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    body = models.TextField(blank=True)
+    body = models.TextField(blank=True, default="")
     created_by = models.ForeignKey(
         User, related_name="comments", on_delete=models.CASCADE
     )
