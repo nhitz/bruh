@@ -37,7 +37,7 @@ class PostAttachment(models.Model):
 
 class Post(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    body = models.TextField(blank=True)
+    body = models.TextField(blank=True, default="")
 
     attachments = models.ManyToManyField(PostAttachment, blank=True)
 
